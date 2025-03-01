@@ -1,0 +1,30 @@
+{
+  "packages": [
+    "terraform@1.10.5",
+    "awscli2@2.23.11",
+    "kubectl@1.32.1",
+    "jq@1.7.1",
+    "tflint@0.55.1",
+    "checkov@3.2.373"
+  ],
+  "shell": {
+    "init_hook": [
+      "echo 'Devbox environment initialized with required tools:'",
+      "terraform --version",
+      "aws --version",
+      "kubectl version --client",
+      "alias tfi='terraform init'",
+      "alias tfp='terraform plan'",
+      "alias tfa='terraform apply'"
+    ],
+    "scripts": {
+      "lint": [
+        "tflint",
+        "terraform fmt -recursive"
+      ],
+      "security-check": [
+        "checkov -d ."
+      ]
+    }
+  }
+} 
