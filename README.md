@@ -48,7 +48,7 @@ This project creates:
 
 ## Getting Started
 
-0. ** This step only needs done once to create the S3 bucket and DynamoDB table needed to store Terraform state and lock files **
+0. **This step only needs done once to create the S3 bucket and DynamoDB table needed to store Terraform state and lock files**
    - Choose a globally unique S3 bucket name and set the value in `terraform-state-infra/main.tf`, `dev/us-east-2/backend.tf` and `prod/us-east-2/backend.tf`.
    ```
    cd terraform-state-infra
@@ -138,7 +138,7 @@ If you encounter issues not covered here, please open an issue in the repository
 
 1. Add GitHub Dependabot to monitor for outdated modules and open PRs when updates are required.
 2. Implement terragrunt to keep your configs DRY, less boilerplate and easier maintenance.
-3. Add a custom domain and SSL certificate so applications can be served via HTTPS.  Either with ACM, or within kubernetes
+3. Add a custom domain and SSL certificate so applications can be served via HTTPS.  Either with ACM, or within kubernetes.
 4. Remove application deployment and logic from a terraform repo and manage it within each application by leveraging Kubernetes tools like ArgoCD.
 5. If the complexity or team size increases, moving modules to their own repo may be beneficial since they change less often and can have different authors work on modules and app teams leverage them.
-6. If multi-cloud becomes needed, you can add another layer of directories at the top level for AWS, GCP, Azure, etc.  This allows for multi-cloud management with an easy to navigate hierarchy
+6. If multi-cloud becomes needed, you can add another layer of directories at the top level for AWS, GCP, Azure, etc.  This allows for multi-cloud management with an easy to navigate hierarchy.
